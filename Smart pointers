@@ -1,0 +1,71 @@
+🧠 Smart Pointers
+What is a Smart Pointer?
+
+A smart pointer is a special pointer that:
+
+Stores a memory address
+
+Automatically deletes the memory
+
+Keeps your program safe from memory problems
+
+You don’t need to write delete yourself.
+
+Why Smart Pointers are Better than Normal Pointers
+
+Normal (raw) pointers:
+
+Need delete manually
+
+Can cause memory leaks
+
+Are easy to misuse
+
+Smart pointers:
+
+Delete memory automatically
+
+Prevent memory leaks
+
+Are safer and cleaner
+
+👉 So they save time and avoid mistakes.
+
+Types of Smart Pointers (3)
+1️⃣ unique_ptr
+
+Only one pointer can own the memory.
+
+unique_ptr<int> p = make_unique<int>(10);
+
+
+Cannot be copied
+
+Can be moved
+
+Best for single ownership
+
+2️⃣ shared_ptr
+
+Many pointers can share the same memory.
+
+shared_ptr<int> p1 = make_shared<int>(20);
+shared_ptr<int> p2 = p1;
+
+
+Memory is deleted when last pointer is gone
+
+3️⃣ weak_ptr
+
+Does not own memory.
+
+weak_ptr<int> wp = p1;
+
+
+Used with shared_ptr
+
+Helps avoid memory issues
+
+One-Line Summary
+
+Smart pointers manage memory for you so you don’t have to worry about deleting it.
