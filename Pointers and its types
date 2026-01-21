@@ -1,0 +1,78 @@
+📌 POINTERS IN C++
+1. What is a Pointer?
+
+A pointer is a variable that stores the memory address of another variable.
+
+Syntax
+datatype *pointerName;
+
+Example
+int x = 5;
+int *p = &x;
+
+Pointer Operators
+Operator	Meaning
+&	Address-of operator
+*	Dereference operator
+Accessing Data
+Expression	Meaning
+p	Address of x
+*p	Value of x
+&p	Address of pointer p
+📌 TYPES OF POINTERS (6 TYPES)
+1️⃣ Null Pointer
+
+A pointer that does not point to any valid memory location.
+
+int *p = nullptr;
+
+
+Use: Prevents accidental access to random memory.
+
+2️⃣ Wild Pointer
+
+A pointer that is declared but not initialized.
+
+int *p;   // wild pointer
+
+
+Problem: Points to random memory → undefined behavior.
+
+3️⃣ Dangling Pointer
+
+A pointer that points to memory that has already been freed or deleted.
+
+int *p = new int(10);
+delete p;   // p is now dangling
+
+
+Danger: Accessing it may crash the program.
+
+4️⃣ Void Pointer
+
+A pointer that can store the address of any data type.
+
+void *p;
+int x = 5;
+p = &x;
+
+
+Note: Must be typecast before dereferencing.
+
+5️⃣ Function Pointer
+
+A pointer that stores the address of a function.
+
+void greet() {
+    cout << "Hello";
+}
+
+void (*p)() = greet;
+p();
+
+
+Use: Callbacks, event handling, advanced programming.
+
+6️⃣ Smart Pointer (Mention Only)
+
+A special type of pointer that automatically manages memory.
